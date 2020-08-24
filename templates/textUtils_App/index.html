@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>MyTextUtils</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <a class="navbar-brand" href="#">MyTextUtils.in</a>
+
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">About Us</a>
+          </li>
+        </ul>
+      </div>
+
+    </nav>
+
+    <div class="alert alert-success alert-dismissible fade show" role="alert">
+      <strong>Welcome to Text Utils!</strong> You can apply various functions on your text here.
+      <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+
+    <div class="container">
+        <form action="/analyze" method="post">
+
+            {% csrf_token %}
+
+            <div class="form-group">
+                <label for="exampleFormControlTextarea1">Please type your text below</label>
+                <textarea name="text" class="form-control" id="exampleFormControlTextarea1" rows="10"></textarea>
+            </div>
+
+            <div class="custom-control custom-switch">
+              <input type="checkbox" name="removepunc" class="custom-control-input" id="customSwitch1">
+              <label class="custom-control-label" for="customSwitch1">Remove Punctutions</label>
+            </div>
+
+            <div class="custom-control custom-switch">
+              <input type="checkbox" name="fullcaps" class="custom-control-input" id="customSwitch2">
+              <label class="custom-control-label" for="customSwitch2">UPPERCASE</label>
+            </div>
+
+            <div class="custom-control custom-switch">
+              <input type="checkbox" name="new_line" class="custom-control-input" id="customSwitch3">
+              <label class="custom-control-label" for="customSwitch3">New Line Remover</label>
+            </div>
+
+            <div class="custom-control custom-switch">
+              <input type="checkbox" name="remove_extra_space" class="custom-control-input" id="customSwitch4">
+              <label class="custom-control-label" for="customSwitch4">Extra space Remover</label>
+            </div>
+
+            <div class="custom-control custom-switch">
+              <input type="checkbox" name="count_char" class="custom-control-input" id="customSwitch5">
+              <label class="custom-control-label" for="customSwitch5">Count Characters</label>
+            </div>
+
+            <!--mt-2 means -> margin top 2-->
+            <button class="btn btn-dark btn-sm mt-2" type="submit">Analyze text</button>
+
+        </form>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+
+</body>
+</html>
